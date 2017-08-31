@@ -61,11 +61,11 @@ dataWrangle(csvData).then( () => {
       data: {
           labels: dataLastTenYearsLabels,
           datasets: [{
-              label : 'Number of Refugees from 2007 to 2016',
-              data  : dataLastTenYearsValues,
+              label           : 'Number of Refugees from 2007 to 2016',
+              data            : dataLastTenYearsValues,
               backgroundColor : 'rgba(82,205,14, 0.5)',
-              borderColor : 'rgba(82,205,14,1)',
-              borderWidth : 1
+              borderColor     : 'rgba(82,205,14,1)',
+              borderWidth     : 1
           }]
       },
       options: {
@@ -128,7 +128,7 @@ svg.append("g")
            .attr("d", path)
            .style("stroke","#d3d3d3")
            .append("title")
-           .text( d =>  `${d.properties.name} : ${dataPerOrigin.get(d.properties.name)} Refugees` )
+           .text( d => `${d.properties.name} : ${dataPerOrigin.get(d.properties.name) ? dataPerOrigin.get(d.properties.name) : 0 } Refugees` )
 
 
 			function mouseover(d){
